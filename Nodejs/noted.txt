@@ -1,0 +1,33 @@
+------------------------------------------------------------
+    Tạo và chạy một ứng dụng Node.js đơn giản -> done
+	Hiểu về module system (CommonJS).
+	Sử dụng npm để quản lý các gói (packages). -> done
+Làm việc với file và hệ thống	
+	Đọc và ghi file với fs module. -> done
+	Làm việc với đường dẫn (path module).
+Tạo server với HTTP module	
+	Tạo và khởi động một HTTP server cơ bản. => done
+	Xử lý request và response.
+Express.js	
+	Cài đặt và cấu hình Express.js. 
+	Tạo các route và middleware.
+	Xử lý request và response.
+	Tích hợp view engines (EJS, Pug).
+Kết nối cơ sở dữ liệu	
+	Sử dụng PostgreSQL với Sequelize.
+	Hiểu về các phương pháp xác thực và phân quyền
+	Sử dụng JWT (JSON Web Token) và Passport.js.
+RESTful API	
+	Hiểu về kiến trúc REST.
+	Tạo và quản lý các endpoint.
+	Sử dụng Postman để kiểm tra API.
+Real-time Communication	
+	Sử dụng WebSocket với Socket.io.
+	Tối ưu hóa hiệu suất ứng dụng.
+	Dự án thực tế
+	Lên ý tưởng và lập kế hoạch.
+	Xây dựng ứng dụng từ đầu đến cuối (ví dụ: blog, e-commerce, chat app).
+	Triển khai ứng dụng lên các dịch vụ như Heroku, AWS, DigitalOcean.
+	Sử dụng Docker để containerize ứng dụng.
+-----------------------------------------------------------
+1 module system (CommonJS)

@@ -1,0 +1,15 @@
+{
+  "name": "learn",
+  "version": "1.0.0",
+  "description": "This is the repo to save code during the process of learning Js.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node Nodejs/moduleSystem/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "2.30.1"
+  }
+}

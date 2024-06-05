@@ -1,0 +1,7 @@
+2. Các loại Streams
+Có bốn loại streams chính trong Node.js:
+
+Readable Streams: Dùng để đọc dữ liệu.
+Writable Streams: Dùng để ghi dữ liệu.
+Duplex Streams: Là streams vừa có thể đọc vừa có thể ghi.
+Transform Streams: Là một loại duplex stream, trong đó đầu ra được biến đổi dựa trên dữ liệu đầu vào.
