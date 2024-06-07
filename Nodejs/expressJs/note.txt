@@ -1,0 +1,3 @@
+res.send: tự động thiết lập các tiêu đề (headers) phù hợp. Nó có thể xử lý nhiều loại dữ liệu khác nhau như chuỗi (string), mảng (array), đối tượng (object), hoặc buffer.
+
+res.end :khi bạn chỉ muốn kết thúc phản hồi mà không cần gửi bất kỳ nội dung nào, hoặc khi bạn muốn có toàn quyền kiểm soát việc gửi dữ liệu.
