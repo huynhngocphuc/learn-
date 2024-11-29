@@ -5,59 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+
     <style>
-      .my-chart {
-        width: 400;
-        height: 400;
-        border: 1px solid black;
-        margin: 20px auto;
+      body {
+        height: 90vh;
+        /* background-color: rgb(197, 194, 194); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .chart-box{
+        width: 400px;
+      }
+      .chart-container {
+        width: 700px;
+        display: flex;
+      }
+      .small-column {
+        width: 40px;
+      }
+      .large-column {
+        max-width: 700px;
+        overflow-x: scroll;
+      }
+      .container {
+        width: calc(1000px - 40px);
+        height: 500px;
       }
     </style>
   </head>
   <body>
-    <canvas id="myChart" class="my-chart"></canvas>
+    <div class="chart-box">
+      <div class="chart-container">
+        <div class="small-column">
+          <canvas id="mySecondChart"></canvas>
+        </div>
+        <div class="large-column">
+          <div class="container">
+            <canvas id="myChart" class="my-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
 
 <script>
   const ctx = document.getElementById("myChart").getContext("2d");
-  const chartAreaBorder = {
-    id: "chartAreaBorder",
-    beforeDraw(chart, args, options) {
-      const {
-        ctx,
-        chartArea: { left, top, width, height },
-      } = chart;
-      ctx.save();
-      ctx.strokeStyle = options.borderColor;
-      ctx.lineWidth = options.borderWidth;
-      ctx.setLineDash(options.borderDash || []);
-      ctx.lineDashOffset = options.borderDashOffset;
-      ctx.strokeRect(left, top, width, height);
-      ctx.restore();
-    },
-  };
+  const ctx2 = document.getElementById("mySecondChart").getContext("2d");
+  let labelX = [
+    ["15", "1月", "2024"], // Nhãn 3 dòng
+    ["16"],
+    ["17"],
+    ["18"],
+    ["19", "1月", "2024"],
+    ["15", "1月", "2024"], // Nhãn 3 dòng
+    ["16"],
+    ["17"],
+    ["18"],
+    ["15", "1月", "2024"], // Nhãn 3 dòng
+    ["16"],
+    ["17"],
+    ["18"],
+    ["19", "1月", "2024"],
+    ["15", "1月", "2024"], // Nhãn 3 dòng
+    ["16"],
+    ["17"],
+    ["18"],
+    ["15", "1月", "2024"], // Nhãn 3 dòng
+    ["16"],
+    ["17"],
+    ["18"],
+    ["19", "1月", "2024"],
+    ["15", "1月", "2024"], // Nhãn 3 dòng
+    ["16"],
+    ["17"],
+    ["18"],
+  ];
+  let dataY = [
+    18, 13, 20, 18, 30, 23, 22, 12, 13, 20, 18, 30, 23, 22, 12, 13, 20, 18, 30,
+    23, 22, 12,
+  ];
+
+  let labelX2 = [];
+  let dataY2 = [];
+
   const myChart = new Chart(ctx, {
     type: "line",
     data: {
       datasets: [
         {
           labels: " dữ liệu",
-          data: [18, 13, 20, 18, 30, 23, 22, 12],
+          data: dataY,
           borderColor: "rgb(75, 192, 192)",
           tension: 0.5,
+          borderColor: "green",
+          fill: false,
         },
       ],
-      labels: ["12", "1", "2", "3", "4", "5", "6", "7"],
+      labels: labelX,
     },
     options: {
+      maintainAspectRatio: false,
+      layout: {
+        padding: {
+          top: 11,
+        },
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
       scales: {
         x: {
           grid: {
             display: false,
           },
-        }
+          ticks: {},
+        },
+        y: {
+          ticks: {
+            // display: false,
+          },
+          border: {
+            // display: false,
+          },
+        },
+      },
+    },
+  });
+
+  const myChart2 = new Chart(ctx2, {
+    type: "line",
+    data: {
+      datasets: [
+        {
+          data: dataY,
+          fill: false,
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+      layout: {
+        padding: {
+          bottom: 36,
+        },
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        x: {
+          ticks: {
+            display: false,
+          },
+          grid: {
+            display: false,
+          },
+        },
+        y: {
+          y: {
+            afterFit: (c) => {
+              c.width = 40;
+            },
+          },
+        },
       },
     },
   });

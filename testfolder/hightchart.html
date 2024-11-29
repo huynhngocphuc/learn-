@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+      #container {
+        width: 600px;
+        height: 300px;
+        margin: 0 auto;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+  <script>
+    const x = [
+      "2023-01-01",
+      "2023-02-01",
+      "2023-03-18",
+      "2023-04-23",
+      "2023-05-29",
+      "2023-06-01",
+      "2023-07-30",
+      "2023-08-05",
+      "2023-09-02",
+      "2023-10-15",
+      "2023-11-01",
+      "2023-12-05",
+      "2024-01-20",
+      "2024-02-01",
+      "2024-03-15",
+      "2024-04-08",
+      "2024-05-01",
+      "2024-06-11",
+      "2024-07-09",
+      "2024-08-01",
+    ];
+    const y = [
+      4, 5, 6, 1, 2, 3, 7, 10, 11, 8, 9, 18, 19, 12, 13, 14, 15, 16, 17, 20,
+    ];
+    Highcharts.chart("container", {
+      //cấu hình char
+      chart: {
+        type: "line",
+      },
+      //cấu hình trục x
+      xAxis: {},
+      yAxis: {},
+      series: [
+        {
+          type: "line",
+          name: "data",
+          data: [
+            [0, 5],
+            [1, 10],
+            [2, 15],
+            [3, 20],
+            [0, 5],
+            [1, 10],
+            [2, 4],
+            [3, 20],
+            [0, 5],
+            [1, 3],
+            [2, 15],
+            [3, 20],
+          ],
+        },
+      ],
+      credits: {
+        enabled: false, // Tắt credits (bỏ link "Highcharts.com")
+      },
+    });
+  </script>
+</html>
